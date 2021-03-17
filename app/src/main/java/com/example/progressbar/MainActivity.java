@@ -15,11 +15,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         pb_horizonal = findViewById(R.id.progressBarHorizontal);
         pb_circular = findViewById(R.id.progressBarCircular);
+        pb_circular.setVisibility(View.GONE);
     }
 
-    public void carregarProgressBar(View view){
+    public void carregarProgressBar(View view) {
         // Progress horizontal
-        this.progresso = this.progresso +1;
+        this.progresso = this.progresso + 1;
         pb_horizonal.setProgress(this.progresso);
+
+        // Progress circular
+        pb_circular.setVisibility(View.VISIBLE);
+
+        if (this.progresso == 10) {
+            pb_circular.setVisibility(View.GONE);
+        }
     }
 }
